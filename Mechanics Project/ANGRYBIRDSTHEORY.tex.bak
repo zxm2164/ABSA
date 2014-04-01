@@ -1,0 +1,172 @@
+\documentclass[prb,twocolumn]{revtex4}
+
+% You should use BibTeX and apsrev.bst for references
+% Choosing a journal automatically selects the correct APS
+% BibTeX style file (bst file), so only uncomment the line
+% below if necessary.
+%\bibliographystyle{apsrev}
+
+\usepackage{epsfig}
+\usepackage{graphicx}
+\begin{document}
+
+\title{Spin Down}
+\date{March 22, 2012}
+\author{Zachary Mink}
+\author{Heather Hill}
+\affiliation{Department of Physics, Ithaca College, Ithaca, New York 14850}
+
+
+
+\begin{equation}
+m\ddot{x} = T_{x} + B_{x} - k\dot{x}
+\end{equation}
+
+\begin{equation}
+m\ddot{y} = T_{y} + B{y} - k\dot{y} - mg
+\end{equation}
+
+\begin{equation}
+I\omega = R_{T} + R_{B} - k\omega
+\end{equation}
+
+\begin{equation}
+\dot{x} = v_{x}
+\end{equation}
+
+\begin{equation}
+\dot{y} = v_{y}
+\end{equation}
+
+\begin{equation}
+\dot{\theta} = \omega
+\end{equation}
+
+\begin{equation}
+\dot{v_{x}} = \frac{{T_{x} + B_{x} - kv_{x}}{m}
+\end{equation}
+
+\begin{equation}
+\dot{v_{y}} = \frac{{T_{y} + B_{y} - kv_{y} - mg}{m}
+\end{equation}
+
+\begin{equation}
+\dot{\omega} = \frac{R_{T}\times T + R_{B}\times B - k\omega}{I}
+\end{equation}
+
+Define these constants:
+$m_{a}$,$m_{b}$ - masses of respective objects
+$\vec{r_{ap}}$,$\vec{r_{bp}}$ - distance from the center of mass of A and B to P respectively
+$\vec{\omega_{a,1}}$, $\vec{\omega_{b,1}}$ - pre-collision angular velocities
+$\vec{\omega_{a,2}}$, $\vec{\omega_{b,2}}$ - post-collision angular velocities
+$v_{a,1}$,$v_{b,1}$ - pre-collision velocities of center of masses
+$v_{a,2}$,$v_{b,2}$ - post-collision velocities of center of masses
+$v_{ap1}$ - pre-collision velocity of impact point on body A
+$v_{bp1}$ - pre-collision velocity of impact point on body B
+$\vec{n}$ - normal vector to edge of body B
+e - elasticity - (ranges between 0 and 1, 0 - inelastic, 1 - perfectly elastic)
+
+
+
+
+
+
+
+
+
+\maketitle
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Introduction}
+
+
+\begin{equation}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Experiment}
+
+A diagram of our instrument and set up is shown in FIG 1.  This experiment was conducted with a PASCO scientific Model ME-9279A, and was conducted following the introduction section of a publication from the American Journal of Physics.%%%%Reference%%%%  
+
+\begin{figure}[h!]
+\includegraphics[width=\linewidth,clip=true]{SpinDownSchematic.pdf}
+\caption{}
+\end{figure}
+
+We began by fitting the two disks shown in figure 1onto the apparatus.  After fitting disk 2 onto disk 1, airflow from a compressor was released into the inlet hose at a pressure of 9 psi.  The 'Scanner' was turned on, and the top disk was watched until it began to turn due to the turbine torque.  Noting the direction in which the top disk began to spin, we manually sped up the disk until the readout on the scanner displayed more than 700 counts per second.  We then hooked up the apparatus through BNC connectors to a local computer in which a MATLAB program was created to record the output from the scanner every 10 seconds.  Data were recorded for about 3 hours until the speed of the disk had reached equilibrium or terminal angular velocity.  These data were then used to calculate the drag parameters.  However,  the data needed to be converted from counts per second to an angular speed.  To do this, the data were divided by 200 based on the 'Rotational Dynamics Apparatus' manual produced by PASCO for this instrument.Reference.!!!!!!!!!!!!!!!!!!!!!! Then, any data points that were greater than 700 counts per second were removed because!!!!!!!!!!!!!!!!!!!!!!.
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Results}
+
+To make initial calculations of $c_{1}$ and $c_{T}$, we used equations 5 and 3.  The value of $\omega_{\infty}$ was determined to be $.500\pm.005$ revolutions per second, with the uncertainty being determined from the fluctuations in the angular speed as t approached 3 hours.  The value for $\omega_{0}$ was determined from the first frequency that was smaller than 700 counts per second which converted to an angular speed of $3.5\pm.03 \frac{rev}{s}$. The uncertainty of this
+ was determined by analyzing the previous and next data points.  The difference between these frequencies and the initial data point was 9 counts/s over a time difference of 10 seconds each.  I used an uncertainty of half of this value, yielding $.03 \frac{rev}{s}$.  To find a value for $\dot{\omega_{0}}$, I calculate the slope between the first and second data point.  To determine an uncertainty in this value, I calculated the slope between the first and the third data point.  The resulting value for $\dot{\omega_{0}}$ was $-.0040\pm.0005$ $\frac{rev}{s^{2}}$.  Using equations 5 and 3, I calculated $c_{1}$ to be $(1\pm2)\times10^{-4} \frac{1}{s}$, and $c_{T}$ to be $(.5\pm1)\times10^{-4} \frac{rev}{s^{2}}$.
+
+A plot of the angular speed of the disk is shown in FIG 2.
+
+\begin{figure}[h!]
+\includegraphics[width=\linewidth,clip=true]{FirstPlot.pdf}
+\caption{}
+\end{figure}
+
+Using equation 7 and a MATLAB program written to calculate a least-square fit, we linearized the data.  The least squares fit program calculated a slope of $(-140\pm2)\times10^{-5} \frac{1}{s}$ which is our new value for $c_{1}$.  This value is slightly larger than our initially calculated value, but with much smaller uncertainty, both of which we expected based on our method of calculating this $c_{1}$.  Calculating the value of $c_{t}$ resulted in a number of $-(700\pm7)\times10^{-6}\frac{rev}{s}$.  The discrepancy between this value and our initial calculation can be attributed to precision and rounding of our initial calculations.    Using these new parameters and equation 7, we fit the data to a line, and compared it to the linear model.  A plot of this comparison is shown below.
+
+\begin{figure}[h!]
+\includegraphics[width=\linewidth,clip=true]{SecondPlot.pdf}
+\caption{}
+\end{figure}
+
+With a correlation coefficient of .9995, the linear fit is very good, as can also be seen in the figure.  
+
+Going back to the exponential model from equation  6, we plotted the data and the model. The top graph displays the exponential data and model, while underneath a plot of the residuals.
+
+\begin{figure}[h!]
+\includegraphics[width=\linewidth,clip=true]{PlotThree.pdf}
+\caption{}
+\end{figure}
+
+This figure is reasonable because we would expect that at higher speeds, quadratic drag would have more of an effect on the disk, making our linear model currently only reasonable at larger time values.  
+
+After comparing these models, we calculated the turbine torque and the linear drag coefficient, derived from our values of the parameters $c_{1} and c_{T}$.  Since these parameters are normalized to the moment of inertia of the disk, to calculate the torque and drag coefficient, we needed to find the moment of inertia.  Taken from most elementary physics or engineering textbooks, the moment of inertia of a disk is
+
+\begin{equation} 
+I = \frac{mr^{2}}{2}
+\end{equation}
+
+in which $m$ is the mass of the disk, and $r$ is the radius of the disk.  Our determined values for this mass and radius were $2.3\pm.5$ kg, and $ .064\pm.003$ m respectively.  Multiplying the moment of inertia by the normalized parameters yields a turbine torque of $-(3.0\pm.3)\times10^{-6}$ Nm, and a drag coefficient of $-(6.6\pm.6)\times10^{-6} \frac{kgm^{2}}{s}$.
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\section{Conclusions}
+Based upon our results, I believe that we likely made a calculation error for the value of  $\epsilon_{0}$.  Even with uncertainty, our calculated value of  $\epsilon_{0}$ is off by a factor of $10^{-2}$.  I believe it is unlikely that errors within the experiment resulted in such a deviation, whereas I am uncertain that using the PASCO lab manuals instructions in neglecting distance `d' in calculating the force was a sound decision.   From the first two sections of our experiment, our data loosely confirms Coulomb's Law, reaffirming the amount of error within our experiment.   Even though uncertainties within our experiment were very large, the amount of variables within the experiment increased the possibility that we would make a calculation error, leading to the discrepancy in the value of $\epsilon_{0}$.
+
+
+
+
+\begin{acknowledgments}
+Many thanks go to Dr. Kelley Sullivan of the Ithaca College Physics Department
+\end{acknowledgments}
+
+
+\end{document}
+
+
